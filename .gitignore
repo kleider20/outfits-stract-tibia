@@ -1,45 +1,91 @@
-﻿# Visual Studio
-.vs/
+```
+# Visual Studio/MSBuild
+outfits-stract-tibia/*.vcxproj.user
+outfits-stract-tibia/Debug/
+outfits-stract-tibia/Release/
+outfits-stract-tibia/x64/
+outfits-stract-tibia/build/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.exp
+*.lib
 *.suo
 *.user
+*.userosscache
 *.sln.docstates
+*.vcxproj.filters
+[ip|*.bin
+*.sdf
+*.opensdf
+*.userprefs
+*.VC.db
+*.VC.VC.opendb
 
-# Build outputs
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+# General build artifacts
 build/
-out/
-
-# Archivos compilados
-*.exe
-*.dll
-*.so
-*.dylib
-*.lib
-*.obj
+dist/
 *.o
+*.a
+*.so
+*.dll
+*.dylib
+*.jar
+*.war
+*.class
 
-# vcpkg (MUY IMPORTANTE - puede ser varios GB)
-vcpkg/
-vcpkg_installed/
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.egg-info/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+htmlcov/
+.coverage.*
+.cache
+.pytest_cache/
+.mypy_cache/
 
-# NuGet
-**/[Pp]ackages/*
-!**/[Pp]ackages/build/
-*.nuget.props
-*.nuget.targets
+# Environment
+.env
+.env.local
+.env.*
+!.env.example
 
-# Otros
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.\#*
+\#*\#
+
+# Logs
 *.log
-*.tmp
-Thumbs.db
+*.out
+
+# OS
 .DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+.directory
+.Trashes
+*.nib
+Settings.StyleCop
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+```
