@@ -1,45 +1,81 @@
-﻿# Visual Studio
-.vs/
+```
+# Build artifacts
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
 *.suo
 *.user
-*.sln.docstates
-
-# Build outputs
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
-build/
-out/
-
-# Archivos compilados
-*.exe
-*.dll
-*.so
-*.dylib
-*.lib
+*.userosscache
+*.sdf
+*.opensdf
+*.opendb
+*.ncb
+*.log
+*.vcg
+*.cod
+*.aps
+*.pidb
+*.pdi
+*.bsc
+*.ilk
+*.pdb
+*.ipdb
+*.iobj
+*.ipch
+*.pch
 *.obj
 *.o
-
-# vcpkg (MUY IMPORTANTE - puede ser varios GB)
-vcpkg/
-vcpkg_installed/
-
-# NuGet
-**/[Pp]ackages/*
-!**/[Pp]ackages/build/
-*.nuget.props
-*.nuget.targets
-
-# Otros
+*.lib
+*.a
+*.so
+*.dll
+*.exe
+*.out
+*.app
+*.dylib
+*.jar
+*.war
+*.class
+*.nib
+*.plst
+*.cache
+*.stackdump
+*.tlog
+*.wrn
 *.log
-*.tmp
-Thumbs.db
+*.lastcodeanalysissucceeded
+*.VC.db
+*.VC.VC.opendb
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*
+.env~*
+*.env
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
+Thumbs.db
+
+# Output directories (if any subdirectories match common build dirs)
+Debug/
+Release/
+x64/
+x86/
+build/
+dist/
+bin/
+obj/
+```
