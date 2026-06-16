@@ -1,62 +1,64 @@
 ```
-# Visual Studio/MSBuild
-outfits-stract-tibia/*.vcxproj.user
-outfits-stract-tibia/Debug/
-outfits-stract-tibia/Release/
-outfits-stract-tibia/x64/
-outfits-stract-tibia/build/
-*.obj
-*.exe
-*.pdb
-*.ilk
-*.exp
-*.lib
+# Build artifacts
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
 *.suo
 *.user
 *.userosscache
-*.sln.docstates
-*.vcxproj.filters
-[ip|*.bin
 *.sdf
 *.opensdf
-*.userprefs
-*.VC.db
-*.VC.VC.opendb
-
-# General build artifacts
-build/
-dist/
+*.opendb
+*.ncb
+*.log
+*.vcg
+*.cod
+*.aps
+*.pidb
+*.pdi
+*.bsc
+*.ilk
+*.pdb
+*.ipdb
+*.iobj
+*.ipch
+*.pch
+*.obj
 *.o
+*.lib
 *.a
 *.so
 *.dll
+*.exe
+*.out
+*.app
 *.dylib
 *.jar
 *.war
 *.class
+*.nib
+*.plst
+*.cache
+*.stackdump
+*.tlog
+*.wrn
+*.log
+*.lastcodeanalysissucceeded
+*.VC.db
+*.VC.VC.opendb
 
 # Dependencies
 node_modules/
-venv/
-.venv/
-__pycache__/
-*.egg-info/
-.Python
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-htmlcov/
-.coverage.*
-.cache
-.pytest_cache/
-.mypy_cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Environment
 .env
 .env.local
 .env.*
-!.env.example
+.env~*
+*.env
 
 # Editors
 .vscode/
@@ -64,28 +66,16 @@ htmlcov/
 *.swp
 *.swo
 *~
-.\#*
-\#*\#
-
-# Logs
-*.log
-*.out
-
-# OS
 .DS_Store
 Thumbs.db
-ehthumbs.db
-Icon?
-.directory
-.Trashes
-*.nib
-Settings.StyleCop
 
-# Temporary files
-*.tmp
-*.temp
-*.bak
-*.backup
-*.swp
-*.swo
+# Output directories (if any subdirectories match common build dirs)
+Debug/
+Release/
+x64/
+x86/
+build/
+dist/
+bin/
+obj/
 ```
