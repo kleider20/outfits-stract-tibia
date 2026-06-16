@@ -1,0 +1,14 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Elementos de la solución/">
+    <File Path="../src/dat_parser.cpp" />
+    <File Path="../src/filesystem_mgr.cpp" />
+    <File Path="../src/image_processor.cpp" />
+    <File Path="../src/lzma_handler.cpp" />
+    <File Path="../src/main.cpp" />
+  </Folder>
+  <Project Path="outfits-stract-tibia.vcxproj" />
+</Solution>

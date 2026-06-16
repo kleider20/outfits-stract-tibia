@@ -1,0 +1,45 @@
+﻿# Visual Studio
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Build outputs
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+build/
+out/
+
+# Archivos compilados
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.obj
+*.o
+
+# vcpkg (MUY IMPORTANTE - puede ser varios GB)
+vcpkg/
+vcpkg_installed/
+
+# NuGet
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# Otros
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
