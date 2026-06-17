@@ -3,6 +3,7 @@
 #include <vector>
 #include <windows.h>
 #include <shlobj.h>
+#include <shobjidl.h>
 #include <commctrl.h>
 #include "dat_parser.hpp"
 #include "lzma_handler.hpp"
@@ -12,6 +13,7 @@
 #pragma comment(lib, "comdlg32.lib")
 #pragma comment(lib, "shell32.lib")
 #pragma comment(lib, "comctl32.lib")
+#pragma comment(lib, "ole32.lib")
 
 #define ID_BTN_ASSETS 1001
 #define ID_BTN_OUTPUT 1002
@@ -46,7 +48,12 @@ bool SelectFolder(HWND hWnd, std::string& outPath, const std::string& title) {
     pfd->GetOptions(&options);
     pfd->SetOptions(options | FOS_PICKFOLDERS);
     
-    pfd->SetTitle(title.c_str());
+    // Convertir título a wide string para SetTitle
+    int size_needed = MultiByteToWideChar(CP_UTF8, 0, title.c_str(), (int)title.length(), NULL, 0);
+    std::wstring wtitle(size_needed, 0);
+    MultiByteToWideChar(CP_UTF8, 0, title.c_str(), (int)title.length(), &wtitle[0], size_needed);
+    pfd->SetTitle(wtitle.c_str());
+    
     hr = pfd->Show(hWnd);
     
     if (SUCCEEDED(hr)) {
@@ -112,13 +119,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             hEditAssets = CreateWindowA("EDIT", "", WS_VISIBLE | WS_CHILD | WS_BORDER | ES_READONLY, 120, 10, 300, 25, hwnd, (HMENU)ID_EDIT_ASSETS, NULL, NULL);
             CreateWindowA("BUTTON", "Browse...", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 430, 10, 80, 25, hwnd, (HMENU)ID_BTN_ASSETS, NULL, NULL);
 
-            CreateWindowA("STATIC", "Output Directory:", WS_VISIBLE | WS_CHILD, 10, 45, 100, 20, hwnd, NULL, NULL);
-            hEditOutput = CreateWindowA("EDIT", "", WS_VISIBLE | WS_CHILD | WS_BORDER | ES_READONLY, 120, 45, 300, 25, hwnd, (HMENU)ID_EDIT_OUTPUT, NULL, NULL);
-            CreateWindowA("BUTTON", "Browse...", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 430, 45, 80, 25, hwnd, (HMENU)ID_BTN_OUTPUT, NULL, NULL);
+            CreateWindowA("STATIC", "Output Directory:", WS_VISIBLE | WS_CHILD, 10, 45, 100, 20, hwnd, NULL, NULL, NULL);
+            hEditOutput = CreateWindowA("EDIT", "", WS_VISIBLE | WS_CHILD | WS_BORDER | ES_READONLY, 120, 45, 300, 25, hwnd, (HMENU)ID_EDIT_OUTPUT, NULL, NULL, NULL);
+            CreateWindowA("BUTTON", "Browse...", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 430, 45, 80, 25, hwnd, (HMENU)ID_BTN_OUTPUT, NULL, NULL, NULL);
 
-            CreateWindowA("BUTTON", "START EXTRACTION", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 10, 80, 500, 35, hwnd, (HMENU)ID_BTN_START, NULL, NULL);
+            CreateWindowA("BUTTON", "START EXTRACTION", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 10, 80, 500, 35, hwnd, (HMENU)ID_BTN_START, NULL, NULL, NULL);
 
-            hTxtLog = CreateWindowA("EDIT", "", WS_VISIBLE | WS_CHILD | WS_BORDER | ES_MULTILINE | ES_READONLY | WS_VSCROLL, 10, 125, 500, 200, hwnd, (HMENU)ID_TXT_LOG, NULL, NULL);
+            hTxtLog = CreateWindowA("EDIT", "", WS_VISIBLE | WS_CHILD | WS_BORDER | ES_MULTILINE | ES_READONLY | WS_VSCROLL, 10, 125, 500, 200, hwnd, (HMENU)ID_TXT_LOG, NULL, NULL, NULL);
             break;
         }
         case WM_COMMAND:
